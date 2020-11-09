@@ -1,0 +1,1 @@
+Criar arquivo de requirements >> https://jtemporal.com/requirements-txt/
