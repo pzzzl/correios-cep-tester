@@ -1,1 +1,3 @@
 Criar arquivo de requirements >> https://jtemporal.com/requirements-txt/
+Criar planilha para salvar os casos
+Criar log de texto
