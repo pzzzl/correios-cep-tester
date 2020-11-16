@@ -12,7 +12,7 @@
 # ESCOPO DO TESTE
 # • Informar um valor correto ou incorreto para a busca de CEP do Correios
 # • Validar, de acordo com o resultado observado X o resultado esperado, se o teste foi atendido corretamente ou não
-# • Informar a quantidade geral de testes processados
+# • Informar a testes processados
 # • Informar a quantidade de testes bem sucedidos
 # • Informar a quantidade de testes falhos
 # • Informar a taxa de sucesso
@@ -40,12 +40,15 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 
+# https://docs.python.org/3/library/codecs.html
 import codecs
 
+# Importa a biblioteca de logs criada para facilitar o desenvolvimento
 import lib_log
+# printlog(): Função responsável por gerar um log personalizado em tempo de execução no console
 from lib_log import printlog
+# String path: caminho de execução do script
 from lib_log import path
-# from lib_log import escreve_arquivo_de_log
 
 # Define o local do arquivo de testes
 printlog("Definindo caminho do arquivo de testes")
@@ -58,7 +61,8 @@ chromedriverPath = path + '/chromedriver.exe'
 printlog("Caminho: \"" + chromedriverPath + "\"\n")
 
 # Define as opções utilizadas no driver
-# A única opção relevante para a execução é a de omitir os logs padrão da ferramenta, afinal serão gerados logs personalizados
+# "headless", "no-sandbox" & "disable-dev-shm-usage" são responsáveis por manter o navegador fechado enquanto o processo é executado
+# "excludeSwitches >> enable-logging" é responsável por omitir os logs padrão do driver
 printlog("Definindo opções do driver\n")
 options = webdriver.ChromeOptions() 
 options.add_argument("--headless")
@@ -73,14 +77,13 @@ printlog("Chrome instanciado com sucesso e opções aceitas. Continuando...\n")
 
 # Inicia a execução do script de testes
 printlog("START --> INICIANDO EXECUÇÃO\n")
-
 # Busca por CEP na página dos Correios
 def procura_por(cep):
     printlog("Iniciando consulta")
     browser.get('https://buscacepinter.correios.com.br/app/endereco/index.php')
     assert 'Busca CEP' in browser.title, 'Site do Correios não carregou'
     caixa_de_busca = browser.find_element_by_id('endereco')
-    printlog("Buscando por " + cep)
+    printlog("Buscando por \"" + cep + "\"")
     caixa_de_busca.send_keys(cep)
     assert cep in caixa_de_busca.get_attribute('value'), 'A busca não foi inserida corretamente'
     caixa_de_busca.send_keys(Keys.RETURN)
@@ -130,20 +133,21 @@ quantidade_de_testes_falhos = 0
 printlog("INICIANDO BUSCA DE ENDEREÇOS...")
 # Para cada caso de teste e seu respectivo resultado esperado a partir do arquivo "testcases.json"
 for case, expected_result in testcases.items():
-    printlog("[CASO DE TESTE]: " + case)
+    printlog("[CASO DE TESTE]: \"" + case + "\"")
     # Verifica o teste e atribui o resultado à variável "result"
     result = verifica(case)
     printlog("[RESULTADO]: " + result)
     printlog("[RESULTADO ESPERADO]: " + expected_result)
     # Se o resultado esperado estiver contido - literalmente - no resultado real
     if expected_result in result:
+        
         printlog("[RESULTADO DO TESTE]: SUCESSO")
         # Incrementa a quantidade de testes e adiciona um novo teste à quantidade de bem sucedidos
         quantidade_de_testes += 1
         quantidade_de_testes_bem_sucedidos += 1
     # Se o resultado esperado não estiver contido no resultado real
     else:
-        printlog("[RESULTADO DO TESTE: FALHA")
+        printlog("[RESULTADO DO TESTE]: FALHA")
         # Incrementa a quantidade de testes e adiciona um novo teste à quantidade de falhas
         quantidade_de_testes += 1
         quantidade_de_testes_falhos += 1
@@ -153,15 +157,14 @@ for case, expected_result in testcases.items():
 def calcula_taxa_de_sucesso():
     # A taxa de sucesso é a razão dos testes bem sucedidos pela quantidade total de testes
     taxa_de_sucesso = quantidade_de_testes_bem_sucedidos/quantidade_de_testes
-    return taxa_de_sucesso
+    return str(taxa_de_sucesso*100)
 
 # Grava as estatísticas no console
 printlog("[QUANTIDADE DE TESTES PROCESSADOS]: " + str(quantidade_de_testes_bem_sucedidos + quantidade_de_testes_falhos))
 printlog("[QUANTIDADE DE TESTES BEM SUCEDIDOS]: " + str(quantidade_de_testes_bem_sucedidos))
 printlog("[QUANTIDADE DE TESTES FALHOS]: " + str(quantidade_de_testes_falhos))
-printlog("[TAXA DE SUCESSO]: " + str(calcula_taxa_de_sucesso()*100) + "%\n\n")
+printlog("[TAXA DE SUCESSO]: " + calcula_taxa_de_sucesso() + "%\n\n")
 
 # Finaliza a execução e encerra o driver
 printlog("Finalizando execução")
-# escreve_arquivo_de_log()
 browser.quit()

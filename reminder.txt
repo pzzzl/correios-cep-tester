@@ -1,5 +1,4 @@
 Criar arquivo de requirements >> https://jtemporal.com/requirements-txt/
-Criar log de texto
+Criar install.txt
 Relatório
 Gravar vídeo explicando sobre a execução
-Implementar tempo de execução
