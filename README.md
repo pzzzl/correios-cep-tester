@@ -6,6 +6,8 @@ Um testador simples e prático da funcionalidade de <a href="https://buscacepint
 python main.py
 ```
 
+Correios CEP Tester é um Projeto Integrado da Universidade Municipal de São Caetano do Sul para os alunos do 4º Semestre de Análise e Desenvolvimento de Sistemas 2020.2.
+
 <hr>
 
 <h2>Escopo do teste</h2>
@@ -72,9 +74,11 @@ Exceção: existem alguns CEPs regionais que são desconsiderados para fins de e
 
 <h5>Créditos</h5>
 
-Andrei Amorim de Santana
-Bruno Peselli Piazzi
-Luan Cuba
-Luciano Feliciano Junior
-Michaelly Fernanda
-Steffany Candalaft Duram
+<ul>
+  <li>Andrei Amorim de Santana</li>
+  <li>Bruno Peselli Piazzi</li>
+  <li>Luan Cuba</li>
+  <li>Luciano Feliciano Junior</li>
+  <li>Michaelly Fernanda</li>
+  <li>Steffany Candalaft Duram</li>
+</ul>
