@@ -28,7 +28,10 @@ import time
 import json
 
 # https://docs.python.org/3/library/datetime.html
-import datetime
+from datetime import datetime
+
+# https://docs.python.org/3/library/sys.html
+import sys
 
 # https://pypi.org/project/selenium/
 # ATENÇÃO: Configurado para rodar com a versão 86 do Google Chrome (limitações do driver)
@@ -37,38 +40,39 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 
-# Define uma função que gera um log personalizado em tempo de execução no console
-def printlog(log):
-    print(str(datetime.datetime.now()) + " -- " + log)
+import codecs
 
-# Define o local do arquivo
-printlog("Definindo caminho de execução")
-path = os.getcwd()
-printlog("Caminho: " + path)
+import lib_log
+from lib_log import printlog
+from lib_log import path
+# from lib_log import escreve_arquivo_de_log
 
 # Define o local do arquivo de testes
 printlog("Definindo caminho do arquivo de testes")
 testcasesPath = path + "/testcases.json"
-printlog("Arquivo de testes: " + testcasesPath)
+printlog("Arquivo de testes: \"" + testcasesPath + "\"\n")
 
 # Define o local do Chromedriver
 printlog("Definindo caminho do Chromedriver.exe")
 chromedriverPath = path + '/chromedriver.exe'
-printlog("Caminho: " + chromedriverPath)
+printlog("Caminho: \"" + chromedriverPath + "\"\n")
 
 # Define as opções utilizadas no driver
 # A única opção relevante para a execução é a de omitir os logs padrão da ferramenta, afinal serão gerados logs personalizados
-printlog("Definindo opções do driver")
+printlog("Definindo opções do driver\n")
 options = webdriver.ChromeOptions() 
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 # Instancia o Google Chrome com as opções fornecidas e o caminho onde está localizado
 printlog("Instanciando Google Chrome")
 browser = webdriver.Chrome(options=options, executable_path=chromedriverPath)
-printlog("Chrome instanciado com sucesso e opções aceitas. Continuando...")
+printlog("Chrome instanciado com sucesso e opções aceitas. Continuando...\n")
 
 # Inicia a execução do script de testes
-printlog("Iniciando execução")
+printlog("START --> INICIANDO EXECUÇÃO\n")
 
 # Busca por CEP na página dos Correios
 def procura_por(cep):
@@ -143,7 +147,7 @@ for case, expected_result in testcases.items():
         # Incrementa a quantidade de testes e adiciona um novo teste à quantidade de falhas
         quantidade_de_testes += 1
         quantidade_de_testes_falhos += 1
-    print("\n")
+    printlog("\n")
 
 # Define a função que calcula a taxa de sucesso da execução baseada nas estatísticas adquiridas durante o processo
 def calcula_taxa_de_sucesso():
@@ -159,4 +163,5 @@ printlog("[TAXA DE SUCESSO]: " + str(calcula_taxa_de_sucesso()*100) + "%\n\n")
 
 # Finaliza a execução e encerra o driver
 printlog("Finalizando execução")
+# escreve_arquivo_de_log()
 browser.quit()
