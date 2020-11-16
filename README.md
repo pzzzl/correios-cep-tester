@@ -68,3 +68,13 @@ Esse método "chave-valor" é extremamente eficiente quando há um conhecimento 
 
 Exceção: existem alguns CEPs regionais que são desconsiderados para fins de endereços unicamente em vias.
 
+<hr>
+
+<h5>Créditos</h5>
+
+Andrei Amorim de Santana
+Bruno Peselli Piazzi
+Luan Cuba
+Luciano Feliciano Junior
+Michaelly Fernanda
+Steffany Candalaft Duram
