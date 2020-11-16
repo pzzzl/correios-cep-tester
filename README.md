@@ -4,6 +4,6 @@ Um testador simples e prático da funcionalidade de <a href="https://buscacepint
 
 <hr>
 
-# Escopo do teste
+<h2>Escopo do teste</h2>
 
 lorem ipsum
