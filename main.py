@@ -2,20 +2,12 @@
 # 4º Semestre
 # 2020.2
 
-# Andrei Amorim de Santana - 711835-9
-# Bruno Peselli Piazzi - 711575-1
-# Luan Cuba - 711798-9
-# Luciano Feliciano Junior - 710889-7
-# Michaelly Fernanda - 712136-1
-# Steffany Candalaft Duram - 713653-4
-
-# ESCOPO DO TESTE
-# • Informar um valor correto ou incorreto para a busca de CEP do Correios
-# • Validar, de acordo com o resultado observado X o resultado esperado, se o teste foi atendido corretamente ou não
-# • Informar a testes processados
-# • Informar a quantidade de testes bem sucedidos
-# • Informar a quantidade de testes falhos
-# • Informar a taxa de sucesso
+# Andrei Amorim de Santana
+# Bruno Peselli Piazzi
+# Luan Cuba
+# Luciano Feliciano Junior
+# Michaelly Fernanda
+# Steffany Candalaft Duram
 
 # IMPORTS
 # https://docs.python.org/3/library/os.html
