@@ -64,7 +64,7 @@ Já para os aspectos gerais do teste:
   <li>Testes bem sucedidos</li>
   <li>Testes falhos</li>
   <li>Taxa de sucesso</li>
-<ul>
+</ul>
 
 <hr>
 
