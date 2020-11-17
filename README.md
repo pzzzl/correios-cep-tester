@@ -44,6 +44,30 @@ O método de teste aplicado baseia-se na comparação de um resultado esperado X
 
 É interessante ressaltar que os testcases funcionam como "garantias" de instrução. Ou seja: de nada ainda executar os testes se os casos de teste estiverem incorretos. Para isso, antes do desenvolvimento foram levantados 17 casos de teste para os quais eram conhecidos os resultados esperados. Assim é possível garantir que quaisquer divergências venham diretamente da ferramenta e não dos casos fornecidos para análise.
 
+<hr>
+
+<h3>Responsabilidades do teste</h3>
+
+O teste é responsável por fornecer estatísticas e registros que possam identificar, com precisão, a eficiência da ferramenta ou mesmo do teste em si para fins de debug. Referente às estatísticas podemos definir, para cada caso de teste, os critérios a serem registrados como:
+
+<ul>
+  <li>Caso de teste</li>
+  <li>Resultado</li>
+  <li>Resultado esperado</li>
+  <li>Resultado do teste (sucesso/falha)</li>
+</ul>
+
+Já para os aspectos gerais do teste:
+
+<ul>
+  <li>Testes processados</li>
+  <li>Testes bem sucedidos</li>
+  <li>Testes falhos</li>
+  <li>Taxa de sucesso</li>
+<ul>
+
+<hr>
+
 <h4>Explicação de cada caso de teste (testcase)</h4>
 
 <ol>
