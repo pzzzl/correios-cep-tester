@@ -1,6 +1,18 @@
 # Correios CEP Tester
 
-<h2>Introdução</h2>
+<h2>Sumário</h2>
+
+1. Introdução
+2. Níveis e tipos de teste
+3. Selenium
+4. Instalação
+5. Escopo do teste
+6. Método de teste
+7. Responsabilidades do teste
+8. Explicação de cada caso de teste (testcase)
+9. Créditos
+
+<h2>1. Introdução</h2>
 
 <b>Correios CEP Tester</b> é um testador simples e prático da funcionalidade de <a href="https://buscacepinter.correios.com.br/app/endereco/index.php">busca de CEPs do Correios</a> construído com <b>Python</b> e </b>Selenium</b>.
 
@@ -16,7 +28,7 @@ Este é um Projeto Integrado da Universidade Municipal de São Caetano do Sul pa
 
 <hr>
 
-<h2>Níveis e tipos de teste</h2>
+<h2>2. Níveis e tipos de teste</h2>
 
 O teste principal consiste em um <b>Teste de Módulo</b>, enquanto a ferramenta cuida da administração quase que despercebida - e extremamente funcional - do <b>Teste de Sistema</b>. De maneira análoga, o foco está em um componente testável separadamente (CEP) ao mesmo tempo que existe um teste de requests http/https (avaliando a disponibilidade da URL), a disponibilidade de elementos na página e outros pelo Selenium.
 
@@ -34,7 +46,7 @@ O teste segue uma estrutura predefinida baseada nos seguintes tópicos:
 
 <hr>
 
-<h2>Selenium</h2>
+<h2>3. Selenium</h2>
 
 > Selenium automates browsers. That's it!
 <sub><i>Selenium automatiza navegadores. É isso!</i></sub>
@@ -43,7 +55,7 @@ Caso a necessidade seja a criação de pacotes de automação ou testes baseados
 
 <hr>
 
-<h3>Instalação</h3>
+<h3>4. Instalação</h3>
 
 Antes de qualquer coisa é necessário instalar o <a href="https://www.python.org/">Python</a>. Ele será necessário como linguagem utilizada no teste. Para verificar a instalação basta digitar no console:
 
@@ -73,7 +85,7 @@ As dependências são (além do Selenium):
 
 <hr>
 
-<h3>Escopo do teste</h3>
+<h3>5. Escopo do teste</h3>
 
 <ul>
   <li>Informar um valor correto - ou incorreto - para a busca de CEP do Correios</li>
@@ -87,7 +99,7 @@ As dependências são (além do Selenium):
 
 <hr>
 
-<h3>Método de teste</h3>
+<h3>6. Método de teste</h3>
 
 O método de teste aplicado baseia-se na comparação de um resultado esperado X um resultado obtido, normalmente conhecido como "Teste do Resultado Esperado". É inerte à estrutura do teste um arquivo <span>testcases.json<span>, contendo um único set chave-valor (key-value) em que, para cada chave, o resultado esperado (valor) é comparado com o resultado obtido. Caso o resultado obtido <b>esteja integralmente contido</b> no resultado esperado, ocorre um match e a funcionalidade passa no teste. Caso contrário, a funcionalidade assume o estado de falha e reprova no teste.
 
@@ -95,7 +107,7 @@ O método de teste aplicado baseia-se na comparação de um resultado esperado X
 
 <hr>
 
-<h3>Responsabilidades do teste</h3>
+<h3>7. Responsabilidades do teste</h3>
 
 O teste é responsável por fornecer estatísticas e registros que possam identificar, com precisão, a eficiência da ferramenta ou mesmo do teste em si para fins de debug. Referente às estatísticas podemos definir, para cada caso de teste, os critérios a serem registrados como:
 
@@ -117,7 +129,7 @@ Já para os aspectos gerais do teste:
 
 <hr>
 
-<h4>Explicação de cada caso de teste (testcase)</h4>
+<h4>8. Explicação de cada caso de teste (testcase)</h4>
 
 <ol>
   <li><b>"01310-932": "Avenida Paulista"</b> - CEP válido, espera resultado válido</li>
@@ -145,7 +157,7 @@ Exceção: existem alguns CEPs regionais que são desconsiderados para fins de e
 
 <hr>
 
-<h5>Créditos</h5>
+<h5>9. Créditos</h5>
 
 <ul>
   <li>Andrei Amorim de Santana</li>
