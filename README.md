@@ -43,20 +43,6 @@ Caso a necessidade seja a criação de pacotes de automação ou testes baseados
 
 <hr>
 
-<h2>Escopo do teste</h2>
-
-<ul>
-  <li>Informar um valor correto - ou incorreto - para a busca de CEP do Correios</li>
-  <li>Validar, de acordo com o resultado observado X o resultado esperado, se o teste foi atendido corretamente ou não</li>
-  <li>Informar a quantidade de testes processados</li>
-  <li>Informar a quantidade de testes bem sucedidos</li>
-  <li>Informar a quantidade de testes falhos</li>
-  <li>Informar a taxa de sucesso</li>
-  <li>Gravar, em tempo de execução, todos os logs gerados em um arquivo .log</li>
-</ul>
-
-<hr>
-
 <h3>Instalação</h3>
 
 Antes de qualquer coisa é necessário instalar o <a href="https://www.python.org/">Python</a>. Ele será necessário como linguagem utilizada no teste. Para verificar a instalação basta digitar no console:
@@ -83,6 +69,20 @@ As dependências são (além do Selenium):
   <li><b>time e datetime</b>: bibliotecas utilizadas no registro de logs temporizados</li>
   <li><b>json</b>: biblioteca manipuladora de arquivos .JSON para puxar os casos de teste</li>
   <li><b>codecs</b>: responsável pela escrita em UTF-8 dos arquivos de log</li>
+</ul>
+
+<hr>
+
+<h3>Escopo do teste</h3>
+
+<ul>
+  <li>Informar um valor correto - ou incorreto - para a busca de CEP do Correios</li>
+  <li>Validar, de acordo com o resultado observado X o resultado esperado, se o teste foi atendido corretamente ou não</li>
+  <li>Informar a quantidade de testes processados</li>
+  <li>Informar a quantidade de testes bem sucedidos</li>
+  <li>Informar a quantidade de testes falhos</li>
+  <li>Informar a taxa de sucesso</li>
+  <li>Gravar, em tempo de execução, todos os logs gerados em um arquivo .log</li>
 </ul>
 
 <hr>
