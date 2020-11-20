@@ -16,7 +16,7 @@
 
 <h2>1. Introdução</h2>
 
-<b>Correios CEP Tester</b> é um testador simples e prático da funcionalidade de <a href="https://buscacepinter.correios.com.br/app/endereco/index.php">busca de CEPs do Correios</a> construído com <b>Python</b> e </b>Selenium</b>.
+<b>Correios CEP Tester</b> é um testador simples e prático da funcionalidade de <a href="https://buscacepinter.correios.com.br/app/endereco/index.php">busca de CEPs do Correios</a> construído com <b>Python</b> e <b>Selenium</b>.
 
 A busca por CEP atua hoje como uma das principais ferramentas do setor, responsável por fornecer consultas públicas e gratuitas a diversas empresas que consomem a imensa base de dados, a fim de atualizar dados cadastrais de clientes, enviar encomendas, consultar endereços e muito mais. Essas buscas podem ser feitas por API ou por uma GUI web.
 
